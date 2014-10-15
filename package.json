@@ -1,5 +1,5 @@
 {
-  "name": "talonjs",
+  "name": "talon",
   "version": "1.0.2",
   "description": "Extract signatures from mail messages",
   "main": "talon.js",
