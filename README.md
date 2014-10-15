@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lmtm/node-talon.svg)](https://travis-ci.org/lmtm/node-talon) [![Dependency Status](https://david-dm.org/lmtm/node-talon.png)](https://david-dm.org/lmtm/node-talon) [![devDependency Status](https://david-dm.org/lmtm/node-talon/dev-status.png)](https://david-dm.org/lmtm/node-talon#info=devDependencies)
+
 node-talon
 ==========
 
