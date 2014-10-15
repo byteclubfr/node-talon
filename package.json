@@ -1,6 +1,6 @@
 {
   "name": "node-talon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract signatures from mail messages",
   "main": "talon.js",
   "scripts": {
