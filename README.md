@@ -11,14 +11,14 @@ Installation
 ------------
 
 ```sh
-npm install --save talon
+npm install --save talonjs
 ```
 
 Usage
 -----
 
 ```js
-var talon = require("talon");
+var talon = require("talonjs");
 var extractSignature = talon.signature.bruteforce.extractSignature;
 
 var message = "Wow. Awesome!\n--\nBob Smith";
