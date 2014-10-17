@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "talon-extract-signature": "bin/talon-extract-signature"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lmtm/node-talon.git"

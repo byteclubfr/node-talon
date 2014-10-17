@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var talon = require("../");
+
+var input = new Buffer("");
+
+process.stdin.on("data", function (chunk) {
+  input = Buffer.concat([input, chunk]);
+});
+
+process.stdin.on("end", function () {
+  var result = talon.signature.bruteforce.extractSignature(input.toString("utf8"));
+  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>> TEXT");
+  console.log(result.text);
+  console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<< TEXT");
+  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>> SIGNATURE");
+  console.log(result.signature);
+  console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<< SIGNATURE");
+});
