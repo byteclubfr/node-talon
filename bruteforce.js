@@ -5,6 +5,7 @@
 
 var debug = require("debug")("talon");
 var _ = require("lodash");
+var stripTags = require("htmlstrip-native").html_strip;
 
 
 module.exports = {
@@ -264,7 +265,7 @@ function markCandidateIndices (lines, candidateIndices) {
   debug("markCandidateIndices", lines, candidateIndices);
   var markers = "";
   _.forEachRight(candidateIndices, function (lineIdx) {
-    var line = lines[lineIdx].trim();
+    var line = stripTags(lines[lineIdx].trim());
     if (lineLengthIgnoringURLs(line) > TOO_LONG_SIGNATURE_LINE) {
       markers += "l"; // Marked as too long
     } else if (line.match(/^-+[^\-]/)) { // if line.startswith('-') and line.strip("-"):

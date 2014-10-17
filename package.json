@@ -21,6 +21,7 @@
   "homepage": "https://github.com/lmtm/node-talon",
   "dependencies": {
     "debug": "^2.0.0",
+    "htmlstrip-native": "0.0.4",
     "lodash": "^2.4.1"
   },
   "devDependencies": {
