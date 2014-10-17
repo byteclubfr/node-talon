@@ -97,6 +97,7 @@ describe("signature.bruteforce", function () {
 
     it("should detect signature words", function () {
       testExtract("Hey!\n\nMerci!\nRoman", "Hey!", "Merci!\nRoman");
+      testExtract("Coucou !\n\n\nCordialement,\n*Nicolas Chambrier*\n\n*​[image: Photos du profil]Photos du profil 1 photo\n<https://plus.google.com/photos/105040947817397227789/albums/5668513848939008417>​*\n*Mercenaire IT*\n\nTél: *0633334403 <0633334403>*\nVCard: http://nicolas.chambrier.fr/vcard", "Coucou !", "Cordialement,\n*Nicolas Chambrier*\n\n*​[image: Photos du profil]Photos du profil 1 photo\n<https://plus.google.com/photos/105040947817397227789/albums/5668513848939008417>​*\n*Mercenaire IT*\n\nTél: *0633334403 <0633334403>*\nVCard: http://nicolas.chambrier.fr/vcard")
       testExtract("Hey!\n--\nCordialement,\n\nRoman", "Hey!", "--\nCordialement,\n\nRoman");
       testExtract("Hey!\n--\nBien cordialement,\n\nRoman", "Hey!", "--\nBien cordialement,\n\nRoman");
       testExtract("Hey!\n--\nVeuillez recevoir, monsieur, l'expression de mes salutations distinguées,\n\nRoman", "Hey!", "--\nVeuillez recevoir, monsieur, l'expression de mes salutations distinguées,\n\nRoman");
