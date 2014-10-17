@@ -74,26 +74,26 @@ var RE_SIGNATURE = new RegExp(
   "(" +
     "(?:" +
       // from original talon lib
-      "^[\\s]*--*[\\s]*[a-z \\.]*$" +
+      "^[ \\t]*--*[\\s]*[a-z \\.]*$" +
       "|" +
-      "^thanks[\\s,!]*$" +
+      "^[ \\t]*thanks[\\s,!]*$" +
       "|" +
-      "^regards[\\s,!]*$" +
+      "^[ \\t]*regards[\\s,!]*$" +
       "|" +
-      "^cheers[\\s,!]*$" +
+      "^[ \\t]*cheers[\\s,!]*$" +
       "|" +
-      "^best[ a-z]*[\\s,!]*$" +
+      "^[ \\t]*best[ a-z]*[\\s,!]*$" +
       // added for French support
       "|" +
-      "^merci[\\s,!]*$" +
+      "^[ \\t]*merci[\\s,!]*$" +
       "|" +
-      "^(?:mes\\s+)?remerciements[\\s,!]*$" +
+      "^[ \\t]*(?:mes\\s+)?(remerciements|respects)[\\s,!]*$" +
       "|" +
-      "^(?:bien|très\\s+)?cordialement[\\s,!]*$" +
+      "^[ \\t]*(?:bien|très\\s+)?cordialement[\\s,!]*" +
       "|" +
-      "^(?:mes\\s+)?meilleur(?:e)?(?:s)?[ a-z]*[\\s,!]*$" +
+      "^[ \\t]*(?:mes\\s+)?meilleur(?:e)?(?:s)?[ a-z]*[\\s,!]*$" +
       "|" +
-      "^(?:veuillez recevoir|je vous prie)?.*(?:mes\\s+)?salutations[ a-zé,]*[\\s,!]*$" +
+      "^[ \\t]*(?:veuillez recevoir|je vous prie)?.*(?:mes\\s+)?salutations[ a-zé,]*[\\s,!]*$" +
     ")" +
     ".*" +
   ")",
