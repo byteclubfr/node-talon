@@ -185,4 +185,17 @@ describe("signature.bruteforce", function () {
 
   });
 
+  describe("advanced features", function () {
+
+    var tooLong20 = bruteforce.__with__({
+      "TOO_LONG_SIGNATURE_LINE": 20
+    });
+
+    it("should ignore URLs", function () {
+      tooLong20(function () {
+        testExtract("Hey man! How r u?\n---\nRoman and http://some.very.long.com/url John", "Hey man! How r u?", "---\nRoman and http://some.very.long.com/url John");
+      });
+    });
+
+  });
 });
