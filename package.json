@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "coverage": "mocha -R html-cov > coverage.html",
-    "coveralls": "YOURPACKAGE_COVERAGE=1 mocha -R mocha-lcov-reporter | coveralls"
+    "coveralls": "mocha -R mocha-lcov-reporter | coveralls"
   },
   "bin": {
     "talon-extract-signature": "bin/talon-extract-signature"
