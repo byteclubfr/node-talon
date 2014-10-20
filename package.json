@@ -2,9 +2,10 @@
   "name": "talon",
   "version": "2.2.0",
   "description": "Extract signatures from mail messages",
-  "main": "talon.js",
+  "main": "lib/talon.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "mocha -R html-cov > coverage.html"
   },
   "bin": {
     "talon-extract-signature": "bin/talon-extract-signature"
@@ -24,9 +25,25 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
+    "blanket": "^1.1.6",
     "chai": "^1.9.2",
     "env-test": "^1.0.0",
     "mocha": "^1.21.5",
     "rewire": "^2.1.0"
+  },
+  "config": {
+    "blanket": {
+      "debug": true,
+      "pattern": "lib",
+      "data-cover-never": [
+        "node_modules/blanket",
+        "node_modules/chai",
+        "node_modules/env-test",
+        "node_modules/mocha",
+        "node_modules/debug",
+        "node_modules/lodash",
+        "bin"
+      ]
+    }
   }
 }

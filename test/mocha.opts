@@ -1,1 +1,2 @@
+--require blanket
 --require env-test

@@ -7,7 +7,7 @@
 var expect = require("chai").expect;
 var rewire = require("rewire");
 
-var bruteforce = rewire("../bruteforce");
+var bruteforce = rewire("../lib/bruteforce");
 
 describe("signature.bruteforce", function () {
 
