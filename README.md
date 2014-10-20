@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/lmtm/node-talon.svg)](https://travis-ci.org/lmtm/node-talon) [![Coverage Status](https://coveralls.io/repos/lmtm/node-talon/badge.svg)](https://coveralls.io/r/lmtm/node-talon) [![Dependency Status](https://david-dm.org/lmtm/node-talon.svg)](https://david-dm.org/lmtm/node-talon) [![devDependency Status](https://david-dm.org/lmtm/node-talon/dev-status.svg)](https://david-dm.org/lmtm/node-talon#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/lmtm/node-talon/master.svg?style=flat)](https://travis-ci.org/lmtm/node-talon)
+[![Coverage Status](http://img.shields.io/coveralls/lmtm/node-talon.svg?style=flat)](https://coveralls.io/r/lmtm/node-talon?branch=master)
+[![Dependency Status](https://david-dm.org/lmtm/node-talon.svg?style=flat)](https://david-dm.org/lmtm/node-talon)
+[![devDependency Status](https://david-dm.org/lmtm/node-talon/dev-status.svg?style=flat)](https://david-dm.org/lmtm/node-talon#info=devDependencies)
 
 node-talon
 ==========
