@@ -1,6 +1,6 @@
 {
   "name": "talon",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Extract signatures from mail messages",
   "main": "lib/talon.js",
   "scripts": {
