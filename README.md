@@ -1,5 +1,4 @@
 [![Build Status](https://img.shields.io/travis/lmtm/node-talon/master.svg?style=flat)](https://travis-ci.org/lmtm/node-talon)
-[![Coverage Status](http://img.shields.io/coveralls/lmtm/node-talon.svg?style=flat)](https://coveralls.io/r/lmtm/node-talon?branch=master)
 [![Dependency Status](https://david-dm.org/lmtm/node-talon.svg?style=flat)](https://david-dm.org/lmtm/node-talon)
 [![devDependency Status](https://david-dm.org/lmtm/node-talon/dev-status.svg?style=flat)](https://david-dm.org/lmtm/node-talon#info=devDependencies)
 
