@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "coverage": "mocha -R html-cov > coverage.html",
-    "coveralls": "mocha -R mocha-lcov-reporter | coveralls"
+    "coveralls": "mocha -R mocha-lcov-reporter | coveralls",
+    "check": "check-build"
   },
   "bin": {
     "talon-extract-signature": "bin/talon-extract-signature"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "blanket": "^1.1.6",
     "chai": "^1.9.2",
+    "check-build": "^1.0.5",
     "coveralls": "^2.11.2",
     "env-test": "^1.0.0",
     "mocha": "^1.21.5",
