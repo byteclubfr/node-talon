@@ -198,4 +198,40 @@ describe("signature.bruteforce", function () {
     });
 
   });
+
+  describe("Ignores Google group footer", function () {
+    var googleFooter = 'You received this message because you are ' +
+    'subscribed to the Google Groups "pplocal" group.\nTo unsubscribe from ' +
+    'this group and stop receiving emails from it, send an email to ' +
+    'pplocal+unsubscribe@googlegroups.com.\nTo post to this group, send ' +
+    'email to pplocal@googlegroups.com.\nTo view this discussion on the web visit ' +
+    'https://groups.google.com/d/msgid/pplocal/CAHc7-p-EDR-n%2B2evsCo56wA7EGn4i52Sbf4Ugq9UodEQQOkjAw%40mail.gmail.com.\n' +
+    'For more options, visit https://groups.google.com/d/optout.'
+
+
+    it("should ignore google footer with body", function () {
+      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP" +
+          googleFooter,
+          "Hey!\n\nWifi not working.",
+          "--\nBest regards,\nP");
+      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP\n--\n" +
+          googleFooter,
+          "Hey!\n\nWifi not working.",
+          "--\nBest regards,\nP");
+      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP\n-- \n" +
+          googleFooter,
+          "Hey!\n\nWifi not working.",
+          "--\nBest regards,\nP");
+    });
+
+    it("should ignore google footer without body", function () {
+      testExtract("--\nBest regards,\nP\n-- \n" + googleFooter,
+          "--",
+          "Best regards,\nP");
+      testExtract("--\n" + googleFooter,
+          "",
+          null);
+    });
+  });
+
 });
