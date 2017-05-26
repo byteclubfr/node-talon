@@ -208,27 +208,83 @@ describe("signature.bruteforce", function () {
      'For more options, visit https://groups.google.com/d/optout.'].join('\n');
 
     it("should ignore google footer with body", function () {
-      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP" +
-          googleFooter,
-          "Hey!\n\nWifi not working.",
-          "--\nBest regards,\nP");
-      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP\n--\n" +
-          googleFooter,
-          "Hey!\n\nWifi not working.",
-          "--\nBest regards,\nP");
-      testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP\n-- \n" +
-          googleFooter,
-          "Hey!\n\nWifi not working.",
-          "--\nBest regards,\nP");
+      testExtract([
+          'Hey!',
+          '',
+          'Wifi not working.',
+          '',
+          '--',
+          'Best regards,',
+          'P',
+          '',
+          googleFooter].join('\n'),
+          ['Hey!',
+           '',
+           'Wifi not working.'].join('\n'),
+          ['--',
+           'Best regards,',
+           'P'].join('\n')
+      );
+
+      testExtract([
+          'Hey!',
+          '',
+          'Wifi not working.',
+          '',
+          '--',
+          'Best regards,',
+          'P',
+          '',
+          '--',
+          googleFooter].join('\n'),
+          ['Hey!',
+           '',
+           'Wifi not working.'].join('\n'),
+          ['--',
+           'Best regards,',
+           'P'].join('\n')
+      );
+
+      testExtract([
+          'Hey!',
+          '',
+          'Wifi not working.',
+          '',
+          '--',
+          'Best regards,',
+          'P',
+          '',
+          '-- ',
+          googleFooter].join('\n'),
+          ['Hey!',
+           '',
+           'Wifi not working.'].join('\n'),
+          ['--',
+           'Best regards,',
+           'P'].join('\n')
+      );
     });
 
     it("should ignore google footer without body", function () {
-      testExtract("--\nBest regards,\nP\n-- \n" + googleFooter,
-          "--",
-          "Best regards,\nP");
-      testExtract("--\n" + googleFooter,
-          "",
-          null);
+      testExtract([
+          '--',
+          'Best regards,',
+          'P',
+          '',
+          '--',
+          googleFooter].join('\n'),
+          '--',
+          ['Best regards,',
+           'P'].join('\n')
+      );
+
+      testExtract([
+          '--',
+          googleFooter].join('\n'),
+          '',
+          null
+      );
+
     });
   });
 
