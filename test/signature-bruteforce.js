@@ -217,13 +217,16 @@ describe("signature.bruteforce", function () {
           'Best regards,',
           'P',
           '',
-          googleFooter].join('\n'),
-          ['Hey!',
-           '',
-           'Wifi not working.'].join('\n'),
-          ['--',
-           'Best regards,',
-           'P'].join('\n')
+          googleFooter
+        ].join('\n'), [
+          'Hey!',
+          '',
+          'Wifi not working.'
+        ].join('\n'), [
+          '--',
+          'Best regards,',
+          'P'
+        ].join('\n')
       );
 
       testExtract([
@@ -236,13 +239,16 @@ describe("signature.bruteforce", function () {
           'P',
           '',
           '--',
-          googleFooter].join('\n'),
-          ['Hey!',
-           '',
-           'Wifi not working.'].join('\n'),
-          ['--',
-           'Best regards,',
-           'P'].join('\n')
+          googleFooter
+        ].join('\n'), [
+          'Hey!',
+          '',
+          'Wifi not working.'
+        ].join('\n'), [
+          '--',
+          'Best regards,',
+          'P'
+        ].join('\n')
       );
 
       testExtract([
@@ -255,13 +261,16 @@ describe("signature.bruteforce", function () {
           'P',
           '',
           '-- ',
-          googleFooter].join('\n'),
-          ['Hey!',
-           '',
-           'Wifi not working.'].join('\n'),
-          ['--',
-           'Best regards,',
-           'P'].join('\n')
+          googleFooter
+        ].join('\n'), [
+          'Hey!',
+          '',
+          'Wifi not working.'
+        ].join('\n'), [
+          '--',
+          'Best regards,',
+          'P'
+        ].join('\n')
       );
     });
 
@@ -272,17 +281,20 @@ describe("signature.bruteforce", function () {
           'P',
           '',
           '--',
-          googleFooter].join('\n'),
-          '--',
-          ['Best regards,',
-           'P'].join('\n')
+          googleFooter
+        ].join('\n'),
+        '--', [
+          'Best regards,',
+          'P'
+        ].join('\n')
       );
 
       testExtract([
           '--',
-          googleFooter].join('\n'),
-          '',
-          null
+          googleFooter
+        ].join('\n'),
+        '',
+        null
       );
 
     });
