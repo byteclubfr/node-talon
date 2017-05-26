@@ -200,14 +200,12 @@ describe("signature.bruteforce", function () {
   });
 
   describe("Ignores Google group footer", function () {
-    var googleFooter = 'You received this message because you are ' +
-    'subscribed to the Google Groups "pplocal" group.\nTo unsubscribe from ' +
-    'this group and stop receiving emails from it, send an email to ' +
-    'pplocal+unsubscribe@googlegroups.com.\nTo post to this group, send ' +
-    'email to pplocal@googlegroups.com.\nTo view this discussion on the web visit ' +
-    'https://groups.google.com/d/msgid/pplocal/CAHc7-p-EDR-n%2B2evsCo56wA7EGn4i52Sbf4Ugq9UodEQQOkjAw%40mail.gmail.com.\n' +
-    'For more options, visit https://groups.google.com/d/optout.'
-
+    var googleFooter =
+    ['You received this message because you are subscribed to the Google Groups "pplocal" group.',
+     'To unsubscribe from this group and stop receiving emails from it, send an email to pplocal+unsubscribe@googlegroups.com.',
+     'To post to this group, send email to pplocal@googlegroups.com.',
+     'To view this discussion on the web visit https://groups.google.com/d/msgid/pplocal/CAHc7-p-EDR-n%2B2evsCo56wA7EGn4i52Sbf4Ugq9UodEQQOkjAw%40mail.gmail.com.',
+     'For more options, visit https://groups.google.com/d/optout.'].join('\n');
 
     it("should ignore google footer with body", function () {
       testExtract("Hey!\n\nWifi not working.\n--\nBest regards,\nP" +
