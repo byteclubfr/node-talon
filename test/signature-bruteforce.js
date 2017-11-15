@@ -37,6 +37,14 @@ describe("signature.bruteforce", function () {
     testExtract("Hey!\n-roman", "Hey!", "-roman");
     testExtract("Hey!\n\n- roman", "Hey!", "- roman");
     testExtract("Wow. Awesome!\n--\nBob Smith", "Wow. Awesome!", "--\nBob Smith");
+    testExtract("hiring \r\n\r\n\r\n--\r\nMarissa\r\nTest Signature 3", "hiring",
+      "--\r\nMarissa\r\nTest Signature 3")
+  });
+
+  it("should detect dash and asterisk signatures", function () {
+    testExtract("Hey man! How r u?\n*---*\nRoman", "Hey man! How r u?", "*---*\nRoman");
+    testExtract("Hey man! How r u?\n**\nRoman", "Hey man! How r u?", "**\nRoman");
+    testExtract("Hey man! How r u?\n*----*\nRoman", "Hey man! How r u?", "*----*\nRoman");
   });
 
   it("should detect signature words", function () {
