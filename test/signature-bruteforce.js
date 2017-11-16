@@ -216,9 +216,19 @@ describe("signature.bruteforce", function () {
         "Date: Wed, Nov 15, 2017 at 3:13 PM\nSubject: hey\nTo: marissa@askspoke.com\n\nintern hiring?\n\n---\nRoman",
         "intern hiring?", "---\nRoman");
       testExtract("---------- Forwarded message ----------\nFrom:\nDate:\nSubject:\nTo:", "", null);
+      testExtract("hi\n---------- Forwarded message ----------\nFrom: Marissa Montgomery <marissa@askspoke.com>\n" +
+        "Date: Thu, Nov 16, 2017 at 11:46 AM\nSubject: Fwd: hey\nTo: m@m15y.com\n\n\nand second bit of text\n" +
+        "---------- Forwarded message ----------\nFrom: Marissa Montgomery <m@m15y.com>\nDate: Thu, Nov 16, 2017 at 11:46 AM" +
+        "\nSubject: hey\nTo: marissa@askspoke.com\n\n\nfirst bit of text",
+        "hi\n\n\n\nand second bit of text\n\n\n\nfirst bit of text", null)
       testExtract("and second bit of text\n---------- Forwarded message ----------\nFrom: Marissa Montgomery <m@m15y.com>\n" +
         "Date: Thu, Nov 16, 2017 at 11:46 AM\nSubject: hey\nTo: marissa@askspoke.com\nfirst bit of text\n-- \nMarissa Montgomery\nTest signature 3",
         "and second bit of text\n\nfirst bit of text", "-- \nMarissa Montgomery\nTest signature 3");
+      testExtract("hi\r\n---------- Forwarded message ----------\r\nFrom: Marissa Montgomery <marissa@askspoke.com>\r\n" +
+        "Date: Thu, Nov 16, 2017 at 11:46 AM\r\nSubject: Fwd: hey\r\nTo: m@m15y.com\r\n\r\n\r\nand second bit of text\r\n" +
+        "---------- Forwarded message ----------\r\nFrom: Marissa Montgomery <m@m15y.com>\r\nDate: Thu, Nov 16, 2017 at 11:46 AM" +
+        "\r\nSubject: hey\r\nTo: marissa@askspoke.com\r\n\r\n\r\nfirst bit of text",
+        "hi\r\n\r\n\r\n\r\nand second bit of text\r\n\r\n\r\n\r\nfirst bit of text", null)
     });
   });
 
