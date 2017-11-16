@@ -207,6 +207,21 @@ describe("signature.bruteforce", function () {
 
   });
 
+  describe("Forwarded email block stripping", function() {
+    it("should ignore forwarded email blocks", function () {
+      testExtract("---------- Forwarded message ----------\nFrom: Marissa Montgomery <m@m15y.com>\n" +
+        "Date: Wed, Nov 15, 2017 at 3:13 PM\nSubject: hey\nTo: marissa@askspoke.com\n\nintern hiring?",
+        "intern hiring?", null);
+      testExtract("---------- Forwarded message ----------\nFrom: Marissa Montgomery <m@m15y.com>\n" +
+        "Date: Wed, Nov 15, 2017 at 3:13 PM\nSubject: hey\nTo: marissa@askspoke.com\n\nintern hiring?\n\n---\nRoman",
+        "intern hiring?", "---\nRoman");
+      testExtract("---------- Forwarded message ----------\nFrom:\nDate:\nSubject:\nTo:", "", null);
+      testExtract("and second bit of text\n---------- Forwarded message ----------\nFrom: Marissa Montgomery <m@m15y.com>\n" +
+        "Date: Thu, Nov 16, 2017 at 11:46 AM\nSubject: hey\nTo: marissa@askspoke.com\nfirst bit of text\n-- \nMarissa Montgomery\nTest signature 3",
+        "and second bit of text\n\nfirst bit of text", "-- \nMarissa Montgomery\nTest signature 3");
+    });
+  });
+
   describe("Ignores Google group footer", function () {
     var googleFooter =
     ['You received this message because you are subscribed to the Google Groups "pplocal" group.',
