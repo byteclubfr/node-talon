@@ -49,7 +49,7 @@ describe("signature.bruteforce", function () {
 
   it("should detect underscore and asterisk signatures", function () {
     testExtract("Hey man! How r u?\n*__________*\nRoman", "Hey man! How r u?", "*__________*\nRoman");
-    testExtract("Hey man! How r u?\n*__________*\nRoman", "Hey man! How r u?", "*__________*\nRoman");
+    testExtract("Hey man! How r u?\n___\nthanks\nRoman", "Hey man! How r u?", "___\nthanks\nRoman");
     testExtract("Hey man! How r u?\n__________\nRoman", "Hey man! How r u?", "__________\nRoman");
     testExtract("Hey man! How r u?\n___\nRoman", "Hey man! How r u?", "___\nRoman");
     testExtract("Wow. Awesome!\n__\nBob Smith", "Wow. Awesome!", "__\nBob Smith");
