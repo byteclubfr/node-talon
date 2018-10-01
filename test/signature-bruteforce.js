@@ -38,13 +38,23 @@ describe("signature.bruteforce", function () {
     testExtract("Hey!\n\n- roman", "Hey!", "- roman");
     testExtract("Wow. Awesome!\n--\nBob Smith", "Wow. Awesome!", "--\nBob Smith");
     testExtract("hiring \r\n\r\n\r\n--\r\nMarissa\r\nTest Signature 3", "hiring",
-      "--\r\nMarissa\r\nTest Signature 3")
+      "--\r\nMarissa\r\nTest Signature 3");
   });
 
   it("should detect dash and asterisk signatures", function () {
     testExtract("Hey man! How r u?\n*---*\nRoman", "Hey man! How r u?", "*---*\nRoman");
     testExtract("Hey man! How r u?\n**\nRoman", "Hey man! How r u?", "**\nRoman");
     testExtract("Hey man! How r u?\n*----*\nRoman", "Hey man! How r u?", "*----*\nRoman");
+  });
+
+  it("should detect underscore and asterisk signatures", function () {
+    testExtract("Hey man! How r u?\n*__________*\nRoman", "Hey man! How r u?", "*__________*\nRoman");
+    testExtract("Hey man! How r u?\n*__________*\nRoman", "Hey man! How r u?", "*__________*\nRoman");
+    testExtract("Hey man! How r u?\n__________\nRoman", "Hey man! How r u?", "__________\nRoman");
+    testExtract("Hey man! How r u?\n___\nRoman", "Hey man! How r u?", "___\nRoman");
+    testExtract("Wow. Awesome!\n__\nBob Smith", "Wow. Awesome!", "__\nBob Smith");
+    testExtract("hiring \r\n\r\n\r\n__\r\nMarissa\r\nTest Signature 3", "hiring",
+      "__\r\nMarissa\r\nTest Signature 3");
   });
 
   it("should detect signature words", function () {
