@@ -59,6 +59,7 @@ describe("signature.bruteforce", function () {
 
   it("should detect signature words", function () {
     testExtract("Hey!\n\nThanks!\nRoman", "Hey!", "Thanks!\nRoman");
+    testExtract("Hey!\n\nThank you!\nRoman", "Hey!", "Thank you!\nRoman");
     testExtract("Hey!\n--\nBest regards,\n\nRoman", "Hey!", "--\nBest regards,\n\nRoman");
     testExtract("Hey!\n--\n--\nRegards,\nRoman", "Hey!", "--\n--\nRegards,\nRoman");
   });
