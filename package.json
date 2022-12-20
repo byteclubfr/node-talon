@@ -22,7 +22,7 @@
   "homepage": "https://github.com/lmtm/node-talon",
   "dependencies": {
     "debug": "^2.1.1",
-    "lodash": "^3.2.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "chai": "^2.0.0",
